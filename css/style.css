@@ -1,0 +1,17 @@
+body header h1 {
+    color: firebrick;
+    align-items: center;
+    line-height: 1.5;
+    font-size: large;
+}
+
+body main h2{
+    font-size: medium;
+    text-align: center;
+}
+
+.logo{
+    width: 250px;
+    display: block;
+    margin: auto;
+}

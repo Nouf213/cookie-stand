@@ -13,10 +13,16 @@ td, th {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
+    margin-top: 50px;
   }
   
   th {
       
     background: #cc5c58;
-    color: #f460b1;
+    color: #111111;
+  }
+  
+  fieldset {
+    border: 1px solid #000;
+    padding: 10px;
   }

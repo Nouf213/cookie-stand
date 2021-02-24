@@ -13,7 +13,32 @@
 
     <main>
       <h2></h2>
-      <div id="sales-data">
+      
+        <form id="cookiesForm">
+          <fieldset>
+            <legend>
+               ADD NEW BRANCH
+            </legend>
+            
+              <label for="CityName"> City Branch</label>
+              <input required class="input-class" type="text" id="CityName">
+            
+            
+              <label for="MinCustomer"> Minimum Customer</label>
+              <input required class="input-class" type="number" id="MinCustomer">
+           
+            
+              <label for="MaxCustomer"> Maximum Customer</label>
+              <input required class="input-class" type="number" id="MaxCustomer">
+            
+              <label for="AvgCookies"> Average Cookies</label>
+              <input type="number" step="any" min="0" id="AvgCookies" name="AvgCookies">
+            
+            <button type="submit">Add Country</button>
+          </fieldset>
+
+        </form>
+        <div id="sales-data">
         <!-- generate this from js: -->
         <!-- <article>
           <h2></h2>

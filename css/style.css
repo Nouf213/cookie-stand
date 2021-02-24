@@ -1,17 +1,22 @@
-body header h1 {
-    color: firebrick;
-    align-items: center;
-    line-height: 1.5;
-    font-size: large;
-}
-
-body main h2{
-    font-size: medium;
-    text-align: center;
-}
-
-.logo{
+main img {
     width: 250px;
-    display: block;
+    display:block;
     margin: auto;
 }
+
+#sales-data{
+    display: block;
+    flex-wrap: wrap;
+}
+
+td, th {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+      
+    background: #cc5c58;
+    color: #f460b1;
+  }

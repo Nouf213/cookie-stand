@@ -11,6 +11,7 @@ function COOKIES ( name,mincust,maxcust,avgcookie ){
   this.hourlyTotal = 0;
   COOKIES.AllCookies.push( this );
 }
+COOKIES.AllCookies = [];
 COOKIES.prototype.randomCustomer = function(){
   for( let i = 0;i < workinghours.length;i++ ){
     let total = Math.ceil( generateRandomNumber( this.mincust,this.maxcust ) * this.avgcookie );
@@ -71,7 +72,7 @@ const tableheader = function(){
 };
 tableheader();
 
-COOKIES.AllCookies = [];
+
 const seattle = new COOKIES( 'seattle',23,65,6.3 );
 console.log( seattle );
 seattle.randomCustomer( 23,65 );
@@ -116,15 +117,29 @@ const tablefooter = function(){
   {
     const th2 = document.createElement( 'th' );
     tr.appendChild( th2 );
-    th2.textContent = seattle.customerArr[i] + tokyo.customerArr[i] + dubai.customerArr[i] + paris.customerArr[i] + lima.customerArr[i];
+    let Totalcookies = 0;
+    for( let j = 0;j < COOKIES.AllCookies.length;j++ )
+    {
+      console.log( parseInt( COOKIES.AllCookies[j].customerArr[i] ) );
+      Totalcookies += parseInt( COOKIES.AllCookies[j].customerArr[i] );
+
+    }
+    th2.textContent = Totalcookies;
+    // th2.textContent = seattle.customerArr[i] + tokyo.customerArr[i] + dubai.customerArr[i] + paris.customerArr[i] + lima.customerArr[i];
 
   }
   const th3 = document.createElement( 'th' );
   tr.appendChild( th3 );
-  th3.textContent = seattle.hourlyTotal + tokyo.hourlyTotal + dubai.hourlyTotal + paris.hourlyTotal + lima.hourlyTotal;
+  let totalofTotals = 0;
+  for( let j = 0;j < COOKIES.AllCookies.length;j++ ){
+
+    totalofTotals += COOKIES.AllCookies[j].hourlyTotal;
+  }
+  th3.textContent = totalofTotals;
+  //th3.textContent = seattle.hourlyTotal + tokyo.hourlyTotal + dubai.hourlyTotal + paris.hourlyTotal + lima.hourlyTotal;
 };
 
-
+tablefooter();
 
 
 const cookiesForm = document.getElementById( 'cookiesForm' );
@@ -135,12 +150,16 @@ cookiesForm.addEventListener( 'submit', function ( event ) {
   const maxcust = event.target.MaxCustomer.value;
   const avgcookie = event.target.AvgCookies.value;
   const city = new COOKIES( cityName, mincust, maxcust, avgcookie );
+  tableElement.removeChild( tableElement.lastChild );
   cookiesForm.reset();
   city.randomCustomer();
   city.render();
   console.log( COOKIES.AllCookies );
+
+
   tablefooter();
 } );
+
 // function addNewBranch( event ) {
 //   event.preventDefault();
 

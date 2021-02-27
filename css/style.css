@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Tajawal&display=swap');
+body{
+  width: 100%;
+  margin: 0;
+  background: #e5cfcf;
+}
+header {
+  margin: 20px auto;
+  text-align: center;
+  font-family: 'MuseoModerno', cursive;
+}
 main img {
     width: 250px;
     display:block;
@@ -8,21 +20,57 @@ main img {
     display: block;
     flex-wrap: wrap;
 }
-
+header img{
+  width: 200px;
+  height: 40px;
+  margin: 0 auto;
+}
 td, th {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
     margin-top: 50px;
+    font-family: 'MuseoModerno', cursive;
   }
   
   th {
       
     background: #cc5c58;
     color: #111111;
+    font-family: 'MuseoModerno', cursive;
   }
   
   fieldset {
     border: 1px solid #000;
     padding: 10px;
   }
+#cookiesForm{
+  font-family: 'MuseoModerno', cursive;
+  text-align: center;
+}
+button{
+  color: #ccc;
+  font-size: medium;
+  background-color: black;
+}
+main h2{
+  text-align: center;
+  font-family: 'MuseoModerno', cursive;
+}
+
+.img1{
+  float: left;
+}
+
+.img2{
+  float: right;
+}
+.img4{
+  float: left;
+}
+.img5{
+  float: right;
+}
+.img6{
+  float: left;
+}
